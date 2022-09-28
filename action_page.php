@@ -1,12 +1,16 @@
 <?php
+require_once "includes/dbh.php";
 
-if ($_POST["uname"] != "rohan" || $_POST["psw"] != "test123") {
-    header("Location: home.html?error=wrong-login");
+$SQL="SELECT * FROM boyarone_table WHERE usrname = ".$_POST["uname"];
+$result = mysqli_query($conn, $SQL);
+if (!$result) {
+    header("location: home.php?error=wrong_username");
+    exit();
+}
+
+if ($_POST["psw"] != mysqli_fetch_all($result, MYSQLI_ASSOC)[0]["password"]) {
+    header("Location: home.php?error=wrong-login");
 } else {
     echo "successful login";
 }
-
-
-
-
 ?>
