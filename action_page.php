@@ -1,10 +1,10 @@
 <?php
 require_once "includes/dbh.php";
 
-$SQL="SELECT * FROM boyarone_table WHERE usrname = ".$_POST["uname"];
+$SQL="SELECT * FROM boyarone_users WHERE usrname = '".$_POST["uname"]."'";
 $result = mysqli_query($conn, $SQL);
 if (!$result) {
-    header("location: home.php?error=wrong_username");
+    header("location: home.php?error=wrong-username";
     exit();
 }
 
