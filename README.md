@@ -1,5 +1,3 @@
-# course-project-group-31
-course-project-group-31 created by GitHub Classroom
 Pitch: Most working Americans have but only 2-3 hours to spare between coming home from work and having to go to bed the next day. 
 Why waste your time managing your pantry in the age of innovation? Our food management system will help you visualize what's in your house, 
 and conveniently auto-order ingredients and other small kitchen necessities from online retailers, allowing you to focus on the cooking and eating! 
