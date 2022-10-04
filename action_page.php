@@ -7,6 +7,7 @@ if (!$result) {
     header("location: home.php?error=wrong-username";
     exit();
 }
+//miscellaneous comment by eisha to test push
 
 if ($_POST["psw"] != mysqli_fetch_all($result, MYSQLI_ASSOC)[0]["password"]) {
     header("Location: home.php?error=wrong-login");
