@@ -3,11 +3,11 @@ if (isset($_GET["error"])) {
   if ($_GET["error"] == "wrong-login") {
     echo "try again";
   }
-}
+} // taking care of wrong login
 
 ?>
 
-<form action="action_page.php" method="post">  
+<form action="action_page.php" method="post">   <!-- fill in the form - send to action page-->
     <div class="container">
       <label for="uname"><b>Username</b></label>
       <input type="text" placeholder="Enter Username" name="uname" required>
