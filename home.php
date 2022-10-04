@@ -8,9 +8,9 @@ if (isset($_GET["error"])) {
 ?>
 
 <form action="action_page.php" method="post">   <!-- fill in the form - send to action page-->
-    <div class="container">
+    <div style="margin:auto; text-align: center;">
       <label for="uname"><b>Username</b></label>
-      <input type="text" placeholder="Enter Username" name="uname" required>
+      <input type="text" placeholder="Enter Username" name="uname" required> <br> 
       <label for="psw"><b>Password</b></label>
       <input type="password" placeholder="Enter Password" name="psw" required>
       <button type="submit">Login</button>
