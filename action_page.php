@@ -11,6 +11,6 @@ if (!$result) {
 if ($_POST["psw"] != mysqli_fetch_all($result, MYSQLI_ASSOC)[0]["password"]) {
     header("Location: home.php?error=wrong-login");
 } else {
-    echo "successful login";
+    $_SESSION["username"] = $_POST["uname"];
 }
 ?>
