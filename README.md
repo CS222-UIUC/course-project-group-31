@@ -1,13 +1,17 @@
-Pitch: Most working Americans have but only 2-3 hours to spare between coming home from work and having to go to bed the next day. 
-Why waste your time managing your pantry in the age of innovation? Our food management system will help you visualize what's in your house, 
-and conveniently auto-order ingredients and other small kitchen necessities from online retailers, allowing you to focus on the cooking and eating! 
+Project Idea: UIUC Course Recommeder
 
+Project Pitch: A website that recommends courses based on a student's interests and background (year, major, etc.)
 
-Functionality:
-Users can input which foods they have in their house and are given recipes that create delicious meals given the ingredients.
-Users are given reminders on what else to buy and when to make the most of what they have, saving them money.
-Boyardone! will automatically add needed items to the customers Kroger cart for easy shopping and fulfillment.
-Users can share their kitchen creations automatically on various social media sites
-Users can store their own recipes and get auto generated shopping lists 
-Users can create to-do/shopping lists for convenient access
-Users can favorite certain recipes to streamline the cook-to-eat process
+Functionality: The functionality includes a list of courses a certain student should take using student ratings, their background, and course requirements. There will also be an option to browse popular courses (based on ratings). If time permits, we can also include a feature that generates a schedule that works well for each student.
+
+Programming Languages: React.js for the front end, Python Flask for the backend storing into a SQL database.
+
+Major Libraries Used: React library, Python Flask library
+
+Testing Methodology:  Unsure if we will have time for testing, github actions have not been functioning properly, so we may just use unit testing.
+
+Components: The project has a scheduling component and login component to it. 
+
+Interactions With Other Components: We will independently store the courses for each student to their UID produced upon login.
+
+Continuous Integration: We will write unit tests for the python flask and use the browser console with react js to make sure everything is proceeding as planned.
