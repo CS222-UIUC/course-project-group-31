@@ -1,26 +1,18 @@
 import './App.css';
+import Login from './Login.js'
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 function App() {
   return (
-    <div className="App">
-      <div className="LoginBox">
-        <div className="LoginTitle">
-          Log in to your Account
-        </div>
-        <div className="InputLayer">
-          Username:
-          <input className="TextBox" type="text"/>
-        </div>
-        <div className="InputLayer">
-          Password:
-          <input className="TextBox" type="text"/>
-        </div>
-        <div className="InputLayer">
-          Don't Have an Account?
-          <a href="/">Create One</a>
-        </div>
-      </div>
-    </div>  
+    <div>
+      <BrowserRouter>
+        <Routes>
+          <Route exact path="/" element={<Login />}>
+          </Route>
+        </Routes>
+      </BrowserRouter>
+
+    </div>
   );
 }
 
