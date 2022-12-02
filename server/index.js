@@ -15,14 +15,21 @@ app.use(cors());
 app.use(express.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
-app.get('/api/get', (req, res)=> {
+app.get('/api/get/user', (req, res)=> {
     const sqlSelect = "SELECT * FROM useraccount";
     db.query(sqlSelect, (err, result) => {
         res.send(result);
     });
 });
 
-app.post("/api/insert", (req, res) => {
+app.get('/api/get/course', (req, res)=> {
+    const sqlSelect = "SELECT * FROM courses";
+    db.query(sqlSelect, (err, result) => {
+        res.send(result);
+    });
+});
+
+app.post("/api/insert/user", (req, res) => {
     const firstname = req.body.firstname;
     const lastname = req.body.lastname;
     const username = req.body.username;
@@ -30,6 +37,17 @@ app.post("/api/insert", (req, res) => {
 
     const sqlInsert = "INSERT INTO useraccount (firstname, lastname, username, password) VALUES (?, ?, ?, ?)"
     db.query(sqlInsert, [firstname, lastname, username, password], (err, result) => {
+        console.log(result);
+    });
+});
+
+app.post("/api/insert/course", (req, res) => {
+    const coursename = req.body.coursename;
+    const coursestartdate = req.body.coursestartdate;
+    const courseenddate = req.body.courseenddate;
+
+    const sqlInsert = "INSERT INTO courses (coursename, coursestartdate, courseenddate) VALUES (?, ?, ?)"
+    db.query(sqlInsert, [coursename, coursestartdate, courseenddate], (err, result) => {
         console.log(result);
     });
 });

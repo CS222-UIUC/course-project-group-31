@@ -9,7 +9,7 @@ function SignUp() {
     const [password, setpassword] = useState('')
 
     const submitSignUp = () => {
-        Axios.post("http://localhost:3001/api/insert", {
+        Axios.post("http://localhost:3001/api/insert/user", {
             firstname:firstname, 
             lastname:lastname, 
             username:username, 
