@@ -31,7 +31,17 @@
     color: var(--text-color);
     font-size: 20px;
 }
+.SubmitButton
+{
+    border-color: var(--text-color);
+    background-color: #303030;
+    color: var(--text-color);
+    width:fit-content;
+    align-self: center;
+    padding: 10px 15px;
+    font-size: 20px;
 
+}
 .TextBox
 {
     margin-left: 30px;
