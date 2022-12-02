@@ -16,6 +16,7 @@ function Login() {
                     Password:
                     <input className="TextBox" type="text" />
                 </div>
+                <input type="button" value="Submit" className="SubmitButton"/>
                 <div className="InputLayer">
                     Don't Have an Account?
                     <a href="/SignUp">Create One</a>
