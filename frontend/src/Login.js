@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import './Login.css';
 
 function Login() {
@@ -9,7 +10,7 @@ function Login() {
                 </div>
                 <div className="InputLayer">
                     Username:
-                    <input className="TextBox" type="text" />
+                    <input className="TextBox" type="text"/>
                 </div>
                 <div className="InputLayer">
                     Password:
@@ -17,7 +18,7 @@ function Login() {
                 </div>
                 <div className="InputLayer">
                     Don't Have an Account?
-                    <a href="/">Create One</a>
+                    <a href="/SignUp">Create One</a>
                 </div>
             </div>
         </div>
