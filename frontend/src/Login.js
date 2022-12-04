@@ -1,11 +1,10 @@
 import { useState, useEffect } from 'react';
-import './Login.css';
+import './features.css';
 
 function Login() {
     return (
-        <div className="LoginPage">
-            <div className="LoginBox">
-                <div className="LoginTitle">
+            <div className="Box">
+                <div className="Title">
                     Log in to your Account
                 </div>
                 <div className="InputLayer">
@@ -22,7 +21,6 @@ function Login() {
                     <a href="/SignUp">Create One</a>
                 </div>
             </div>
-        </div>
     );
 }
 

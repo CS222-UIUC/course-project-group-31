@@ -7,7 +7,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 function App() {
   return (
-    <div>
+    <div className="Page">
       <BrowserRouter>
         <Routes>
           <Route exact path="/" element={<Login />}>
@@ -18,7 +18,6 @@ function App() {
           </Route>
         </Routes>
       </BrowserRouter>
-
     </div>
   );
 }

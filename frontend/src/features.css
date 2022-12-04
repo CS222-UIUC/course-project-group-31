@@ -1,12 +1,4 @@
-.LoginPage
-{
-    display: flex;
-    width: 100vw;
-    height: 100vh;
-    justify-content: center;
-    background: linear-gradient(45deg,#e05000,#e070a0);
-}
-.LoginBox
+.Box
 {
     display: flex;
     flex-direction: column;
@@ -18,7 +10,7 @@
     justify-content: space-between;
     
 }
-.LoginTitle
+.Title
 {
     color: var(--text-color);
     font-size: 30px;

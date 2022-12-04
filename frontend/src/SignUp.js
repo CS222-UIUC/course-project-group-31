@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import './SignUp.css';
+import './features.css';
 import Axios from 'axios'
 
 function SignUp() {
@@ -10,29 +10,37 @@ function SignUp() {
 
     const submitSignUp = () => {
         Axios.post("http://localhost:3001/api/insert/user", {
-            firstname:firstname, 
-            lastname:lastname, 
-            username:username, 
-            password:password
+            firstname: firstname,
+            lastname: lastname,
+            username: username,
+            password: password
         }).then(() => {
-            alert("insert succesful");
+            this.props.history.push('/');
         });
     };
 
     return (
-        <div className="SignUpPage">  
-            <div className='form'>
-                <h1> Sign Up </h1>
-                <label>First Name: </label>
-                <input type="text" name="firstname" onChange={(e) => { setfirstname(e.target.value) }}/>
-                <label>Last Name: </label>
-                <input type="text" name="lastname" onChange={(e) => { setlastname(e.target.value) }}/>
-                <label>Username: </label>
-                <input type="text" name="username" onChange={(e) => { setusername(e.target.value) }}/>
-                <label>Password: </label>
-                <input type="text" name="password" onChange={(e) => { setpassword(e.target.value) }}/>
-                <button onClick={submitSignUp}> Submit </button>
+        <div className="Box">
+            <div className="Title">
+                Create your Account
             </div>
+            <div className="InputLayer">
+                First Name:
+                <input className="TextBox" type="text" onChange={(e) => { setfirstname(e.target.value) }}/>
+            </div>
+            <div className="InputLayer">
+                Last Name:
+                <input className="TextBox" type="text" onChange={(e) => { setlastname(e.target.value) }}/>
+            </div>
+            <div className="InputLayer">
+                Username:
+                <input className="TextBox" type="text" onChange={(e) => { setusername(e.target.value) }}/>
+            </div>
+            <div className="InputLayer">
+                Password:
+                <input className="TextBox" type="text" onChange={(e) => { setpassword(e.target.value) }}/>
+            </div>
+            <input type="button" value="Submit" className="SubmitButton" onClick={submitSignUp}/>
         </div>
     );
 }
