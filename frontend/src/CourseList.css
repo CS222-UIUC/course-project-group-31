@@ -1,0 +1,37 @@
+.CourseListPage
+{
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    background: linear-gradient(45deg,#c2ebe9,#4f76e1);
+    text-align: center;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.form input{
+    width: 300px;
+    height: 200px;
+    margin: 10px;
+    font-size: 25px;
+}
+
+.card {
+    width: 500px;
+    height: 300px;
+    border: 2px solid powderblue;
+    border-radius: 15px;
+    margin: 20px;   
+}
+
+#updateInput {
+    width: 200px;
+    height: 20px;
+    margin-bottom: 10px;
+}
