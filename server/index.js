@@ -22,6 +22,20 @@ app.get('/api/get/user', (req, res)=> {
     });
 });
 
+//     find specified student with useraccount and password values
+
+// app.get('/api/get/user/sign_in', (req, res)=> {
+//     const username = req.body.username;
+//     const password = req.body.password;
+//     const sqlSelect = "SELECT * FROM useraccount WHERE username = "+req.params.username + "password = " + req.params.password;
+//     // db.query(sqlSelect, (err, result) => {
+//     //     res.send(result);
+//     // });
+//     db.query(sqlSelect, [username, password], (err, result) => {
+//         console.log(result);
+//     });
+// });
+
 app.get('/api/get/course', (req, res)=> {
     const sqlSelect = "SELECT * FROM courses";
     db.query(sqlSelect, (err, result) => {
