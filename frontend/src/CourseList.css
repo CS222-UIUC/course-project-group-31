@@ -4,7 +4,7 @@
     width: 100vw;
     height: 100vh;
     justify-content: center;
-    background: linear-gradient(45deg,#e05000,#e070a0);
+    background: linear-gradient(45deg,#c2ebe9,#4f76e1);
     text-align: center;
 }
 
@@ -17,17 +17,17 @@
 
 .form input{
     width: 300px;
-    height: 100px;
+    height: 200px;
     margin: 10px;
     font-size: 25px;
 }
 
 .card {
     width: 500px;
-    height: 250px;
+    height: 300px;
     border: 2px solid powderblue;
     border-radius: 15px;
-    margin: 10px;   
+    margin: 20px;   
 }
 
 #updateInput {
