@@ -16,6 +16,7 @@ function Home() {
                     <a href="/CourseList" className = "SubmitButton" value = "addcourse"> Add Courses </a>
                     <a href="/CourseReview" className = "SubmitButton" value = "coursereview"> Post Course Review </a>
                     <button className = "SubmitButton" value = "studygroup"> Find Study Group </button>
+                    <a href="/" className = "SubmitButton" value = "logout"> Logout </a>
                 </div>
             </div>
         </div>
