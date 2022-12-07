@@ -1,8 +1,8 @@
-.CourseListPage
+.CourseReviewPage
 {
     display: flex;
     width: 100vw;
-    height: 100vh;
+    height: 150vh;
     justify-content: center;
     background: linear-gradient(45deg,#e05000,#e070a0);
     text-align: center;
@@ -17,21 +17,25 @@
 
 .form input{
     width: 300px;
-    height: 100px;
+    height: 60px;
     margin: 10px;
     font-size: 25px;
 }
 
 .card {
     width: 500px;
-    height: 250px;
+    height: 150px;
     border: 2px solid powderblue;
     border-radius: 15px;
-    margin: 10px;   
+    margin: 10px;
 }
 
 #updateInput {
-    width: 200px;
+    width: 100px;
     height: 20px;
     margin-bottom: 10px;
+}
+
+.textbox {
+    height: 100px;
 }

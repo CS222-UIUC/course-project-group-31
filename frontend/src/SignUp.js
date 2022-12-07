@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import './SignUp.css';
 import Axios from 'axios'
+import { Route } from 'react-router-dom';
 
 function SignUp() {
     const [firstname, setfirstname] = useState('')
@@ -19,6 +20,11 @@ function SignUp() {
         });
     };
 
+    const redirectToHome = () => {
+        //Redirect to home page
+        window.location.href="/"
+      };
+
     return (
         <div className="SignUpPage">  
             <div className='form'>
@@ -31,7 +37,10 @@ function SignUp() {
                 <input type="text" name="username" onChange={(e) => { setusername(e.target.value) }}/>
                 <label>Password: </label>
                 <input type="text" name="password" onChange={(e) => { setpassword(e.target.value) }}/>
-                <button onClick={submitSignUp}> Submit </button>
+                <div>
+                    <button className = "SubmitButton" onClick={submitSignUp}> Submit </button>
+                    <button className = "SubmitButton" onClick={redirectToHome}> Back </button>
+                </div>
             </div>
         </div>
     );
