@@ -3,12 +3,13 @@ import './Login.css';
 import Axios from 'axios'
 
 function Login() {
-    const [UIUCStudentList, setUIUCStudentList] = useState([]);
-    useEffect(() => {
-        Axios.get("http://localhost:3001/api/get/user").then((response) => {
-            setUIUCStudentList(response.data)
-        })
-    }, []);
+    const [username, setusername] = useState('');
+    const [password, setpassword] = useState('');
+
+    const submitLogin = (course) => {
+        Axios.get('http://localhost:3001/api/get/user/' + [username, password]);
+        window.location.href="../Home"
+    };
 
     return (
         <div className="LoginPage">
@@ -18,23 +19,19 @@ function Login() {
                 </div>
                 <div className="InputLayer">
                     Username:
-                    <input className="TextBox" type="text" name = "username"/>
+                    <input className="TextBox" type="text" name = "username" onChange={(e) => { setusername(e.target.value) }}/>
                 </div>
                 <div className="InputLayer">
                     Password:
-                    <input className="TextBox" type="text" />
+                    <input className="TextBox" type="text" name = "password" onChange={(e) => { setpassword(e.target.value) }}/>
                 </div>
-                <input type="button" value="Submit" className="SubmitButton" name ="password"/>
+                <button onClick={submitLogin} className = "SubmitButton" value = "Submit"> Submit </button>
+                {/* <input type="button" value="Submit" className="SubmitButton" onClick={submitLogin}/> */}
                 <div className="InputLayer">
                     Don't Have an Account?
                     <a href="/SignUp">Create One</a>
                 </div>
-            </div>
-            { UIUCStudentList.map((val) => {
-                        return <h1>Username: {val.username} | Password: {val.password}</h1> 
-                // displays all values from student list
-                // need to find specified username and password
-            })} 
+            </div> 
         </div>
     );
 }

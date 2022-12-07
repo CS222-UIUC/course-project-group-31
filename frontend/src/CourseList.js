@@ -3,9 +3,12 @@ import './CourseList.css';
 import Axios from 'axios'
 
 function CourseList() {
-    const [coursename, setcoursename] = useState('');
-    const [coursestartdate, setcoursestartdate] = useState('');
-    const [courseenddate, setcourseenddated] = useState('');
+    const [coursename, setcoursename] = useState("");
+    const [coursestartdate, setcoursestartdate] = useState("");
+    const [courseenddate, setcourseenddated] = useState("");
+
+    const [newCoursestartdate, setnewCoursestartdate] = useState("");
+    const [newCourseenddate, setnewCourseenddated] = useState("");
 
     const [UIUCCourseList, setUIUCCourseList] = useState([]);
 
@@ -20,9 +23,30 @@ function CourseList() {
             coursename:coursename, 
             coursestartdate:coursestartdate, 
             courseenddate:courseenddate
-        }).then(() => {
-            alert("insert succesful");
         });
+        setUIUCCourseList([
+            ...UIUCCourseList, 
+            {coursename:coursename, coursestartdate:coursestartdate, courseenddate:courseenddate}]);
+    };
+
+    const deleteCourse = (course) => {
+        Axios.delete('http://localhost:3001/api/delete/course/${coursename}');
+    };
+
+    const updateCourseStartDate = (course) => {
+        Axios.put("http://localhost:3001/api/update/course/coursestartdate", {
+            coursename:course,
+            coursestartdate:newCoursestartdate,
+        });
+        setnewCoursestartdate("");
+    };
+
+    const updateCourseEndDate = (course) => {
+        Axios.put("http://localhost:3001/api/update/course/courseenddate", {
+            coursename:course,
+            courseenddate:newCourseenddate,
+        });
+        setnewCourseenddated("");
     };
 
     return (
@@ -35,11 +59,38 @@ function CourseList() {
                 <input type="text" name="coursestartdate" onChange={(e) => { setcoursestartdate(e.target.value) }}/>
                 <label>Class End Date: </label>
                 <input type="text" name="courseenddate" onChange={(e) => { setcourseenddated(e.target.value) }}/>
-                <button onClick={submitCourseInfo}> Submit </button>
+                <div>
+                <button className = "SubmitButton" onClick={submitCourseInfo}> Submit </button>
+                <a href="/Home" className = "SubmitButton" value = "home"> Home </a>
+                </div>
+                
             </div>
+
+            <div className='form'>
             { UIUCCourseList.map((val) => {
-                return <h1>Course Name: {val.coursename} | Start Date: {val.coursestartdate} | End Date: {val.courseenddate}</h1>
+                return (
+                    <div className='card'>
+                        <h1> {val.coursename} 
+                            <button onClick = {() => {deleteCourse(val.coursename)}}>Delete</button>
+                        </h1>
+                        <p>{val.coursestartdate}
+                            <input type ="text" id = "updateInput" onChange={(e) => {
+                                setnewCoursestartdate(e.target.value)
+                            }}/>
+                            <button onClick = {() => {updateCourseStartDate(val.coursename)}}> Update </button>
+                        </p>
+                        <p>{val.courseenddate}
+                        <input type ="text" id = "updateInput" onChange={(e) => {
+                                setnewCourseenddated(e.target.value)
+                            }}/>
+                        <button onClick = {() => {updateCourseEndDate(val.coursename)}}> Update </button> 
+                        </p>
+                        
+                    </div>
+                );
             })}
+            </div>
+            
         </div>
     );
 }
