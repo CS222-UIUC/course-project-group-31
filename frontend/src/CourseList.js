@@ -37,7 +37,7 @@ function CourseList() {
                 <input type="text" name="courseenddate" onChange={(e) => { setcourseenddated(e.target.value) }}/>
                 <button onClick={submitCourseInfo}> Submit </button>
             </div>
-            {UIUCCourseList.map((val) => {
+            { UIUCCourseList.map((val) => {
                 return <h1>Course Name: {val.coursename} | Start Date: {val.coursestartdate} | End Date: {val.courseenddate}</h1>
             })}
         </div>
