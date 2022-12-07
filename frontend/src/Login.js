@@ -32,6 +32,8 @@ function Login() {
             </div>
             { UIUCStudentList.map((val) => {
                         return <h1>Username: {val.username} | Password: {val.password}</h1> 
+                // displays all values from student list
+                // need to find specified username and password
             })} 
         </div>
     );
