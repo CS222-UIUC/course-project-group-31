@@ -22,6 +22,8 @@ app.get('/api/get/user', (req, res)=> {
     });
 });
 
+//     find specified student with useraccount and password values
+
 // app.get('/api/get/user/sign_in', (req, res)=> {
 //     const username = req.body.username;
 //     const password = req.body.password;
